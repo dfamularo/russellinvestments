@@ -362,8 +362,8 @@ p { color: #5c5c5c; }
           <div class="form-group">
             <div class="col-md-12">Here is where you can send us on a search to find your other super, including any lost or ATO-held super you may have.<br>
               <br>
-              <input type="checkbox" id="searchConsent" value="searchConsent"><label for="searchConsent">&nbsp;I consent to the Trustee of iQ Super to search for my other super accounts.</label><br>
-              <input type="checkbox" id="consolidateConsent" value="consolidateConsent"><label for="consolidateConsent">&nbsp;I consent to the Trustee of iQ Super to consolidate all other superannuation accounts that are found</label><br>
+              <input type="checkbox" id="searchConsent" value="searchConsent" required><label for="searchConsent">&nbsp;I consent to the Trustee of iQ Super to search for my other super accounts.</label><br>
+              <input type="checkbox" id="consolidateConsent" value="consolidateConsent" required><label for="consolidateConsent">&nbsp;I consent to the Trustee of iQ Super to consolidate all other superannuation accounts that are found</label><br>
             </div>
           </div>
         </div>
@@ -448,7 +448,6 @@ $(document).ready(function(e) {
 			$(this).parent().parent().removeClass("has-error")
 		})
 		
-		
 		$("#registration-form").validator().on("submit",function(e){
 		  if (e.isDefaultPrevented()) {
 			if ($("#title span[data-bind=label]").html()==""){
@@ -456,6 +455,12 @@ $(document).ready(function(e) {
 			}
 			if ($("#state span[data-bind=label]").html()==""){
 				$("#state").parent().parent().addClass("has-error");
+			}
+			if ($("#simple-allocation span[data-bind=label]").html()==""){
+				$("#simple-allocation").parent().parent().addClass("has-error");
+			}
+			if ($("#insurance span[data-bind=label]").html()==""){
+				$("#insurance").parent().parent().addClass("has-error");
 			}
 
 		  } else {
