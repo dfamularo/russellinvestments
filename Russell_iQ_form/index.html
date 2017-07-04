@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Russell iQ Super form</title>
+<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<link rel="stylesheet" href="css/date.css">
+<link rel="stylesheet" type="text/css" href="http://fast.fonts.com/cssapi/b0549848-32a3-4c8e-a13e-810394960364.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js " ></script>
+<script src="js/validator.js"></script>
+<script src="http://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+<script src="js/numeric.js"></script>
+
+<!--[if lt IE 9]>
+	  <script src="js/html5shiv.js"></script>
+	  <script src="js/respond.min.js"></script>
+	<![endif]-->
+<style>
+body { font-family: "CompatilFactLTW01-Regul 721693", Arial, sans-serif; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "CompatilFactLTW01-Regul 721693", Arial, sans-serif; font-weight: 100 !important; color: #333333; }
+h1 { font-size: 2em; }
+.container { max-width: 1000px; }
+h3 { font-size: 1.5em; }
+a { color: #66aadd; text-decoration: none; }
+p { color: #5c5c5c; }
+.total-value-error { color: #a94442 }
+.dropdown-toggle { position: relative; }
+.btn .caret { float: right; }
+.caret { border-top: 2px solid #a3a3a3; border-right: 0px solid transparent; border-left: 2px solid #a3a3a3; position: relative; height: 7px; width: 7px; transform: rotate(45deg); -webkit-transform: rotate(45deg); -moz-transform: rotate(45deg); -ms-transform: rotate(45deg); -o-transform: rotate(45deg); transition: all 0.6s; margin-top: 3px; margin-left: 4px; vertical-align: middle; }
+.caret:before { content: ""; height: 7px; width: 7px; top: 2px; left: 2px; position: absolute; transition: all 0.6s; border-top: 2px solid #a3a3a3; border-right: 0px solid transparent; border-left: 2px solid #a3a3a3; transform: rotate(180deg); -webkit-transform: rotate(180deg); -moz-transform: rotate(180deg); -ms-transform: rotate(180deg); -o-transform: rotate(180deg); }
+@-moz-document url-prefix() {
+ .caret {
+ margin-top: -15px;
+}
+}
+.btn-group { width: 100%; }
+.active > a { border-top: 1px solid #dd6600 !important; }
+.nav-tabs { border-bottom: 1px solid #aaaaaa !important; }
+.nav-tabs-back li { background-color: #f5f5f5; width: 100px; z-index: -1; }
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover { border-color: #aaa #aaa transparent; }
+.nav-tabs > li > a { border-radius: 4px 4px 0 0; }
+.btn { text-align: left; }
+.perc-box { width: 10%; }
+.adButtons { padding-left: 15px; padding-right: 15px; }
+.btn-standard { background-color: #66aadd; color: white; }
+.btn-standard:hover { background-color: #858585; color: #ffffff; }
+.btn.disabled, .btn[disabled], fieldset[disabled] .btn { box-shadow: none; cursor: pointer; opacity: 1; }
+.disclaimer p { font-size: 11px; line-height: 1.4 !important; }
+.modal-header { border-bottom: 1px solid #fff; }
+#clone { width: auto !important; }
+.radio { display: inline-block; }
+.appear { display: none; }
+
+@media (max-width: 767px) {
+.disappear { display: none; }
+.appear { display: block; }
+}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="container-fluid"> <br>
+    <br>
+    <br>
+    <h1 style="text-align: center;">JOIN RUSSELL IQ<sup>&reg;</sup> SUPER</h1>
+    <br>
+    <h3 style="text-align: center;">Please complete this form to open your Russell iQ Super account.</h3>
+    <p style="text-align: center;">(Please complete all fields marked with *)</p>
+    <hr>
+    <h3>Tell us about yourself</h3>
+    <br>
+    <form class="form-horizontal"  id="registration-form" data-toggle="validator" role="form" method="get" action="thankyou.html">
+      <div class="row">
+        <div class="col-md-2 ">
+          <p>TITLE*</p>
+          <div class="form-group">
+            <div class="btn-group btn-input clearfix col-sm-12 ">
+              <button type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown" id="title" required> <span data-bind="label"></span>&nbsp; <span class="caret "></span> </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">MR</a></li>
+                <li><a href="#">MRS</a></li>
+                <li><a href="#">MS</a></li>
+                <li><a href="#">MISS</a></li>
+                <li><a href="#">DR</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 ">
+          <p>GIVEN NAMES*</p>
+          <div class="form-group">
+            <div class="col-md-12">
+              <input class="form-control" id="inputName" name="firstname" type="text" required>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-5 ">
+          <p>SURNAME*</p>
+          <div class="form-group">
+            <div class="col-md-12">
+              <input class="form-control" id="inputSurname" required>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-2 ">
+          <p>DATE OF BIRTH*</p>
+          <div class="form-group">
+            <div class="col-md-12" >
+              <input class="form-control" id="datepicker" type="text" required>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-3 ">
+          <p>GENDER*</p>
+          <div class="form-group">
+            <div class="col-md-12 radio">
+              <div class="btn-group" data-toggle="buttons">
+                <label >
+                  <input type="radio" id="male" name="quality[25]" value="1" required/>
+                  Male </label>
+                &nbsp;
+                <label>
+                  <input type="radio" id="female" name="quality[25]" value="2" required/>
+                  Female </label>
+              </div>
+              <!--btn group--> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <h3>How can we contact you?</h3>
+      <br>
+      <div class="row">
+        <div class="col-md-6 ">
+          <p>ADDRESS*</p>
+          <div class="form-group">
+            <div class="col-md-12">
+              <input class="form-control" id="inputAddress1" placeholder="LINE 1" required >
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <p>&nbsp;</p>
+          <div class="form-group"> 
+            <!--           <label for="inputPassword" class="col-md-4 control-label">OTHER</label> -->
+            <div class="col-md-12">
+              <input class="form-control" id="inputAddress2" placeholder="LINE 2">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <p>SUBURB</p>
+          <div class="form-group"> 
+            <!--           <label for="inputPassword" class="col-md-4 control-label">OTHER</label> -->
+            <div class="col-md-12">
+              <input class="form-control" id="inputSuburb">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <p>STATE*</p>
+          <div class="form-group">
+            <div class="btn-group btn-input clearfix col-sm-12">
+              <button type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown" id="state"> <span data-bind="label"></span>&nbsp;<span class="caret"></span> </button>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">NSW</a></li>
+                <li><a href="#">QLD</a></li>
+                <li><a href="#">VIC</a></li>
+                <li><a href="#">WA</a></li>
+                <li><a href="#">TAS</a></li>
+                <li><a href="#">NT</a></li>
+                <li><a href="#">SA</a></li>
+                <li><a href="#">ACT</a></li>
+                <li><a href="#">OTHER</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <p>POSTCODE*</p>
+          <div class="form-group"> 
+            <!--           <label for="inputEmail" class="col-md-4 control-label">TITLE*</label> -->
+            <div class="col-md-12">
+              <input class="form-control" id="inputPostcode" type="text" required>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <p>COUNTRY*</p>
+          <div class="form-group">
+            <div class="btn-group btn-input clearfix col-sm-12">
+              <input class="form-control" id="inputCountry"  type="text" required>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <p>EMAIL ADDRESS*</p>
+          <div class="form-group">
+            <div class="col-md-12">
+              <input class="form-control" id="inputEmail"  type="email" required>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 ">
+          <p>CONFIRM EMAIL ADDRESS*</p>
+          <div class="form-group">
+            <div class="col-md-12">
+              <input class="form-control" id="inputEmail2"  type="email" data-match="#inputEmail" required>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 ">
+          <p>MOBILE CONTACT NUMBER*</p>
+          <div class="form-group">
+            <div class="col-md-12">
+              <input class="form-control" id="inputMobile" type="text" required>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 ">
+          <p>WORK CONTACT NUMBER</p>
+          <div class="form-group">
+            <div class="col-md-12">
+              <input class="form-control" id="inputWork">
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 ">
+          <p>HOME CONTACT NUMBER</p>
+          <div class="form-group">
+            <div class="col-md-12">
+              <input class="form-control" id="inputContact" >
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <h3>What is your tax file number?*</h3>
+      <div class="row">
+        <div class="col-md-12 ">
+          <div class="form-group">
+            <div class="col-md-12">
+              <input class="form-control" id="inputTax" type="text" required>
+              <br>
+              By providing my TFN, I agree for it to be used as outlined in the TFN Collection Statement. <br>
+              <div class="item">
+                <div class="subitem"><a href="javascript:void(0)">Why is it important to give us your Tax File Number?</a></div>
+              </div>
+              <div class="statusRollup" >
+                <p style="font-size: 12px;">Under superannuation law, we can collect your Tax File Number (TFN) for lawful purposes. While you don’t have to give us your TFN, doing so means: </p>
+                <ul>
+                  <li>
+                    <p style="font-size: 12px;">we’ll be able to accept all types of contributions to your account(s);</p>
+                  </li>
+                  <li>
+                    <p style="font-size: 12px;">the tax on contributions to your super account(s) will not increase;</p>
+                  </li>
+                  <li>
+                    <p style="font-size: 12px;">other than the tax that may generally apply, no additional tax will be deducted when you start drawing down your super benefits and;</p>
+                  </li>
+                  <li>
+                    <p style="font-size: 12px;">it will make it much easier to trace different super accounts in your name, so that you receive all your super benefits when you retire.</p>
+                  </li>
+                </ul>
+                <p style="font-size: 12px;">The Trustee of your super fund may share your TFN with another super provider when your benefits are being transferred, unless you ask the Trustee in writing that your TFN not be shared with any other super provider. Your TFN will otherwise remain confidential. </p>
+              </div>
+              Can't find your TFN? Call the Australian Taxation Office on 132 861. </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <h3>Choose your investment strategy*</h3>
+      <div class="row">
+        <div class="col-md-12 ">
+          <div class="form-group">
+            <div class="col-md-12"> The way your super is invested today can have a direct impact on your retirement savings, and could mean the difference between achieving the lifestyle you want and falling short. you can choose either a simple or advanced strategy. For more details, please read the <a href="https://russellinvestments.com/-/media/files/au/resources/SS PDS IBR InvestmentGuide.pdf" target="_blank">Russell iQ Super Investments Guide.</a><br>
+              <br>
+              <div id="home" class="tab-pane fade in active">
+                <div class="row">
+                  <div class="col-md-4 ">
+                    <div class="form-group">
+                      <div class="btn-group btn-input clearfix col-sm-12">
+                        <button type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown" id="simple-allocation" required> <span data-bind="label"></span>&nbsp;<span class="caret"></span> </button>
+                        <ul class="dropdown-menu" role="menu">
+                          <li><a href="#">Diversified 50</a></li>
+                          <li><a href="#">High Growth</a></li>
+                          <li><a href="#">Growth</a></li>
+                          <li><a href="#">Balanced</a></li>
+                          <li><a href="#">Conservative</a></li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!--menu1--> 
+              
+              <!--tab content-->
+              <div class="row">
+                <div class="col-md-12 "> <br>
+                  <b>Note:</b> You can change your investment strategy up to five times a year at no cost by logging in to your online account.<br>
+                  <br>
+                  <input type="checkbox" id="rebalance" value="rebalance_checkbox">
+                  &nbsp;Automatically rebalance to my future investment strategy.
+                  <div class="item">
+                    <div class="subitem-2"><a href="javascript:void(0)">What does this mean?</a></div>
+                  </div>
+                  <div class="statusRollup-2" >
+                    <p style="font-size: 12px;"> This means automatically switching investment units between the above options to realign your investment with the strategy you have chosen. This helps you to maintain the risk level that you’re most comfortable with and stay focused on your investment objectives. <br>
+                      <br>
+                      Automatic re-balancing will happen on the 15th day of each month, so you won’t be able to switch your investments for the three working days before this date.</p>
+                  </div>
+                </div>
+              </div>
+              <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
+                    </div>
+                    <div class="modal-body"> For more information or for any questions about Russell iQ Super, please call us on 1800 225 599 (+61 2 9374 3911 for overseas members) or email us at <a href="mailto:russelliq@russell.com">russelliq@russell.com</a> </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <h3>Insurance</h3>
+      <div class="row">
+        <div class="col-md-12 ">
+          <div class="form-group">
+            <div class="col-md-12"> Some text about insurance<br>
+              <br>
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="form-group">
+                    <div class="btn-group btn-input clearfix col-sm-12">
+                      <button type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown" id="insurance"> <span data-bind="label"></span>&nbsp;<span class="caret"></span> </button>
+                      <ul class="dropdown-menu" role="menu">
+                        <li><a href="#">No insurance</a></li>
+                        <li><a href="#">Group Life Insurance</a></li>
+                        <li><a href="#">Transfer an existing cover to my new membership</a></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h3>Search and consolidate consent</h3>
+      <div class="row">
+        <div class="col-md-12 ">
+          <div class="form-group">
+            <div class="col-md-12">Here is where you can send us on a search to find your other super, including any lost or ATO-held super you may have.<br>
+              <br>
+              <input type="checkbox" id="searchConsent" value="searchConsent"><label for="searchConsent">&nbsp;I consent to the Trustee of iQ Super to search for my other super accounts.</label><br>
+              <input type="checkbox" id="consolidateConsent" value="consolidateConsent"><label for="consolidateConsent">&nbsp;I consent to the Trustee of iQ Super to consolidate all other superannuation accounts that are found</label><br>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr>
+      <h3>By clicking Submit, I declare that</h3>
+      <div class="row">
+        <div class="col-md-12">
+          <ul>
+            <li>I have read and understood the <a href="https://russellinvestments.com/-/media/files/au/resources/pds/SS PDS SF RiQS.pdf" target="_blank">Russell iQ Super Product Disclosure Statement</a> (PDS).</li>
+            <li>I understand that Russell iQ Super is an online only product and that communication will be sent electronically.</li>
+            <li>All information provided in this online form is true and correct.</li>
+            <li>I agree to be bound by the terms and conditions of Russell iQ Super, including those in the PDS (or any subsequent replacement PDS), the Trust Deed (as amended from time to time) and the terms and conditions of any insurance policy in relation to Russell iQ Super.</li>
+          </ul>
+          <b>Note:</b> You will be able to update your insurance preferences when you first log in to your online account. <br>
+          <br>
+          <button type="submit" class="btn btn-standard" id="submit">Submit</button>
+          <br>
+          <br>
+          <br>
+          For more information or for any questions about Russell iQ Super, please call us on 1800 225 599 (+61 2 9374 3911 for overseas members) or email us at <a href="mailto:russelliq@russell.com">russelliq@russellinvestments.com</a><br>
+          <br>
+          <span class="disclaimer">
+          <p> IN PREPARING THIS FORM THE TRUSTEE HAS NOT TAKEN INTO ACCOUNT THE INVESTMENT OBJECTIVES, FINANCIAL SITUATION AND PARTICULAR NEEDS (FINANCIAL CIRCUMSTANCES) OF ANY PERSON. ACCORDINGLY, BEFORE MAKING A DECISION ABOUT THIS PRODUCT YOU SHOULD READ THE CURRENT PRODUCT DISCLOSURE STATEMENT AND SEEK ADVICE TAILORED TO YOUR OWN FINANCIAL CIRCUMSTANCES.TOTAL RISK MANAGEMENT PTY LIMITED ABN 62 008 644 353, AFSL NO. 238790, TRUSTEE OF THE RUSSELL SUPERSOLUTION MASTER TRUST ABN 89 384 753 567.<br>
+            <br>
+          </p>
+          </span> <br>
+          <hr>
+        </div>
+      </div>
+    </form>
+  </div>
+  <br>
+  <br>
+</div>
+<!--article--> 
+
+<script>
+
+//ToolTips
+	$.widget("ui.tooltip", $.ui.tooltip, {
+		options: {
+			content: function () {
+				return $(this).prop('title');
+			}
+		}
+	});
+	
+	$(function () {
+		$('.subitem').attr('title', $('.statusRollup').remove().html())
+		$(document).tooltip();
+	});
+	$(function () {
+		$('.subitem-2').attr('title', $('.statusRollup-2').remove().html())
+		$(document).tooltip();
+	});
+	$("input.numeric").numeric()
+
+$(document).ready(function(e) {
+
+		//datepicker
+		$(function() {
+			$("#datepicker").datepicker({
+				changeMonth: true,
+			  	changeYear: true,
+			 	yearRange: "-100:+0",
+				dateFormat:"dd-mm-yy"
+			})			
+		});
+		  
+		
+		//bootstrap downdown
+		$( document.body ).on( 'click', '.dropdown-menu li', function( event ) {
+			var $target = $( event.currentTarget );
+			$target.closest( '.btn-group' )
+			.find( '[data-bind="label"]' ).text( $target.text() )
+			.end()
+			.children( '.dropdown-toggle' ).dropdown( 'toggle' );
+			return false;
+  		});
+		$(".dropdown-toggle").click(function(){
+			$(this).parent().parent().removeClass("has-error")
+		})
+		
+		
+		$("#registration-form").validator().on("submit",function(e){
+		  if (e.isDefaultPrevented()) {
+			if ($("#title span[data-bind=label]").html()==""){
+				$("#title").parent().parent().addClass("has-error");
+			}
+			if ($("#state span[data-bind=label]").html()==""){
+				$("#state").parent().parent().addClass("has-error");
+			}
+
+		  } else {
+			//INVALID
+			if ($("#title span[data-bind=label]").html()==""){
+				$("#title").parent().parent().addClass("has-error");
+				e.preventDefault()
+			}
+			if ($("#state span[data-bind=label]").html()==""){
+				$("#state").parent().parent().addClass("has-error");
+				e.preventDefault()
+			}
+		  }
+		})
+		
+		
+});
+</script>
+</body>
+</html>
