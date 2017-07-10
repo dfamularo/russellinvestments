@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>Russell iQ Super form</title>
+<title>Join iQ Super Saver</title>
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
 <link rel="stylesheet" href="css/date.css">
@@ -27,6 +27,7 @@ h1 { font-size: 2em; }
 h3 { font-size: 1.5em; }
 a { color: #66aadd; text-decoration: none; }
 p { color: #5c5c5c; }
+.numbers {color: #858585;}
 .total-value-error { color: #a94442 }
 .dropdown-toggle { position: relative; }
 .btn .caret { float: right; }
@@ -58,6 +59,7 @@ p { color: #5c5c5c; }
 @media (max-width: 767px) {
 .disappear { display: none; }
 .appear { display: block; }
+#insurance {white-space: initial; height: 70px;}
 }
 </style>
 </head>
@@ -66,12 +68,15 @@ p { color: #5c5c5c; }
   <div class="container-fluid"> <br>
     <br>
     <br>
-    <h1 style="text-align: center;">JOIN RUSSELL IQ<sup>&reg;</sup> SUPER</h1>
-    <br>
-    <h3 style="text-align: center;">Please complete this form to open your Russell iQ Super account.</h3>
+    <h1 style="text-align: center;">JOIN IQ SUPER<sup>TM</sup> &ndash; SAVER<br>
+	   
+    </h1>
+    
+    <h3 style="text-align:center">Exclusively for One Big Switch customers</h3>
+    <h3 style="text-align: center; font-size: 1.2em;">Please complete this form to open your iQ Super &ndash; Saver account in six simple steps.</h3>
     <p style="text-align: center;">(Please complete all fields marked with *)</p>
     <hr>
-    <h3>Tell us about yourself</h3>
+    <h3><span class="numbers">1.</span> Tell us about yourself</h3>
     <br>
     <form class="form-horizontal"  id="registration-form" data-toggle="validator" role="form" method="get" action="thankyou.html">
       <div class="row">
@@ -133,7 +138,7 @@ p { color: #5c5c5c; }
         </div>
       </div>
       <hr>
-      <h3>How can we contact you?</h3>
+      <h3><span class="numbers">2.</span> Your contact details</h3>
       <br>
       <div class="row">
         <div class="col-md-6 ">
@@ -154,11 +159,11 @@ p { color: #5c5c5c; }
           </div>
         </div>
         <div class="col-md-6 ">
-          <p>SUBURB</p>
+          <p>SUBURB*</p>
           <div class="form-group"> 
             <!--           <label for="inputPassword" class="col-md-4 control-label">OTHER</label> -->
             <div class="col-md-12">
-              <input class="form-control" id="inputSuburb">
+              <input class="form-control" id="inputSuburb" required>
             </div>
           </div>
         </div>
@@ -206,15 +211,30 @@ p { color: #5c5c5c; }
             </div>
           </div>
         </div>
-        <div class="col-md-6 ">
+		<div class="col-md-6">
+			<div class="form-group has-feedback">
+				<div class="col-md-12">
+				    <p>CONFIRM EMAIL ADDRESS*</p>
+				    <div class="input-group" style="width: 100% !important;">
+				      <input type="text"  class="form-control" id="inputEmail2"  type="email" style="border-radius: 3px !important;" data-match="#inputEmail" data-match-error="The email addresses you entered don’t match" required>
+				    </div>
+				    <span class="glyphicon form-control-feedback" aria-hidden="true"></span>
+				    <div class="help-block with-errors"></div>
+				</div>
+		  </div>        
+		</div>
+<!--
+  		<div class="col-md-6 ">
           <p>CONFIRM EMAIL ADDRESS*</p>
           <div class="form-group">
             <div class="col-md-12">
-              <input class="form-control" id="inputEmail2"  type="email" data-match="#inputEmail" required>
+              <input class="form-control" id="inputEmail2"  type="email" data-match="#inputEmail" data-match-error="The email addresses you entered don’t match" required>
+              
             </div>
           </div>
         </div>
-        <div class="col-md-4 ">
+-->
+        <div class="col-md-6">
           <p>MOBILE CONTACT NUMBER*</p>
           <div class="form-group">
             <div class="col-md-12">
@@ -222,6 +242,7 @@ p { color: #5c5c5c; }
             </div>
           </div>
         </div>
+<!--
         <div class="col-md-4 ">
           <p>WORK CONTACT NUMBER</p>
           <div class="form-group">
@@ -238,19 +259,20 @@ p { color: #5c5c5c; }
             </div>
           </div>
         </div>
+-->
       </div>
       <hr>
-      <h3>What is your tax file number?*</h3>
+      <h3><span class="numbers">3.</span> Tax File Number*</h3>
       <div class="row">
         <div class="col-md-12 ">
           <div class="form-group">
             <div class="col-md-12">
               <input class="form-control" id="inputTax" type="text" required>
               <br>
-              By providing my TFN, I agree for it to be used as outlined in the TFN Collection Statement. <br>
-              <div class="item">
-                <div class="subitem"><a href="javascript:void(0)">Why is it important to give us your Tax File Number?</a></div>
-              </div>
+              By providing my Tax File Number (TFN), I agree for it to be used as outlined in the TFN Collection Statement. 
+              <span class="item">
+                <span class="subitem"><a href="javascript:void(0)">Why is it important to give us your Tax File Number?</a></span>
+              </span>
               <div class="statusRollup" >
                 <p style="font-size: 12px;">Under superannuation law, we can collect your Tax File Number (TFN) for lawful purposes. While you don’t have to give us your TFN, doing so means: </p>
                 <ul>
@@ -274,24 +296,26 @@ p { color: #5c5c5c; }
         </div>
       </div>
       <hr>
-      <h3>Choose your investment strategy*</h3>
+      <h3><span class="numbers">4.</span> Investment strategy*</h3>
       <div class="row">
         <div class="col-md-12 ">
           <div class="form-group">
-            <div class="col-md-12"> The way your super is invested today can have a direct impact on your retirement savings, and could mean the difference between achieving the lifestyle you want and falling short. you can choose either a simple or advanced strategy. For more details, please read the <a href="https://russellinvestments.com/-/media/files/au/resources/SS PDS IBR InvestmentGuide.pdf" target="_blank">Russell iQ Super Investments Guide.</a><br>
+            <div class="col-md-12">Choose your investment strategy from the diversified options below. Once you join, you can customise your investment strategy from the full menu of 15 options. For more details, please read the <a href="https://russellinvestments.com/-/media/files/au/resources/SS PDS IBR InvestmentGuide.pdf" target="_blank">iQ Super &ndash; Saver Investments Guide.</a><br>
               <br>
               <div id="home" class="tab-pane fade in active">
                 <div class="row">
                   <div class="col-md-4 ">
                     <div class="form-group">
                       <div class="btn-group btn-input clearfix col-sm-12">
-                        <button type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown" id="simple-allocation" required> <span data-bind="label"></span>&nbsp;<span class="caret"></span> </button>
+	                      
+                        <button type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown" id="simple-allocation" data-label-placement required> <span data-bind="label">Blended Balanced</span><span class="caret"></span> </button>
                         <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Diversified 50</a></li>
+	                
+                          <li><a href="#">Blended Balanced</a></li>
                           <li><a href="#">High Growth</a></li>
-                          <li><a href="#">Growth</a></li>
-                          <li><a href="#">Balanced</a></li>
-                          <li><a href="#">Conservative</a></li>
+                          <li><a href="#">Balanced Opportunities</a></li>
+                          <li><a href="#">Diversified 50</a></li>
+                          <li><a href="#">Defensive</a></li>
                         </ul>
                       </div>
                     </div>
@@ -303,13 +327,14 @@ p { color: #5c5c5c; }
               <!--tab content-->
               <div class="row">
                 <div class="col-md-12 "> <br>
-                  <b>Note:</b> You can change your investment strategy up to five times a year at no cost by logging in to your online account.<br>
+                  <b>Note:</b> You will be able to update your insurance preferences and change your investment strategy up to five times a year at no cost via your online account.
+<br>
                   <br>
                   <input type="checkbox" id="rebalance" value="rebalance_checkbox">
                   &nbsp;Automatically rebalance to my future investment strategy.
-                  <div class="item">
-                    <div class="subitem-2"><a href="javascript:void(0)">What does this mean?</a></div>
-                  </div>
+                  <span class="item">
+                    <span class="subitem-2"><a href="javascript:void(0)">What does this mean?</a></span>
+                  </span>
                   <div class="statusRollup-2" >
                     <p style="font-size: 12px;"> This means automatically switching investment units between the above options to realign your investment with the strategy you have chosen. This helps you to maintain the risk level that you’re most comfortable with and stay focused on your investment objectives. <br>
                       <br>
@@ -323,7 +348,7 @@ p { color: #5c5c5c; }
                     <div class="modal-header">
                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"> <span aria-hidden="true">&times;</span> </button>
                     </div>
-                    <div class="modal-body"> For more information or for any questions about Russell iQ Super, please call us on 1800 225 599 (+61 2 9374 3911 for overseas members) or email us at <a href="mailto:russelliq@russell.com">russelliq@russell.com</a> </div>
+                    <div class="modal-body"> For more information or for any questions about iQ Super &ndash; Saver, please call us on 1800 555 667 (+61 2 9374 3916 from overseas) or email us at <a href="mailto:iq@russellinvestments.com.au">iq@russellinvestments.com.au</a> </div>
                   </div>
                 </div>
               </div>
@@ -332,31 +357,79 @@ p { color: #5c5c5c; }
         </div>
       </div>
       <hr>
-      <h3>Insurance</h3>
+      <h3><span class="numbers">5.</span> Insurance cover*</h3>
       <div class="row">
         <div class="col-md-12 ">
           <div class="form-group">
-            <div class="col-md-12"> Some text about insurance<br>
+            <div class="col-md-12"> You can choose from three options:<br>
               <br>
               <div class="row">
-                <div class="col-md-6">
+                <div class="col-md-7 col-md-12">
                   <div class="form-group">
                     <div class="btn-group btn-input clearfix col-sm-12">
                       <button type="button" class="btn btn-default dropdown-toggle form-control" data-toggle="dropdown" id="insurance"> <span data-bind="label"></span>&nbsp;<span class="caret"></span> </button>
                       <ul class="dropdown-menu" role="menu">
-                        <li><a href="#">No insurance</a></li>
-                        <li><a href="#">Group Life Insurance</a></li>
-                        <li><a href="#">Transfer an existing cover to my new membership</a></li>
+                        <li><a href="#" id="noInsurance">I don't need insurance cover.</a></li>
+                        <li><a href="#" id="groupLifeInsurance">I want Group Life insurance cover.</a></li>
+                        <li><a href="#" id="transferInsurance">I want to transfer an existing insurance cover to my iQ Super – Saver account.</a></li>
                       </ul>
                     </div>
+                    <div id="noInsuranceDetail" style="display: none; padding-left: 20px;"><p><br><br><br>While iQ Super – Saver doesn’t have any default insurance cover, you can always apply for Death, Total and Permanent Disablement (TPD) and/or Income Protection insurance cover later. </p></div>
+
+                 
+                   <div id="groupLifeInsuranceDetail" style="display: none; padding-left: 20px;"><p><br><br><br>You will need to go through our underwriting process with our insurer and we’ll be in touch with more information on this.</p></div>
+
                   </div>
+				   <div id="transferInsuranceDetail" style="display: none; padding-left: 20px;"><p>We’ll contact you to find out more about your existing insurance cover.</p></div>
+				    
+                  </div>
+
+				  
                 </div>
               </div>
             </div>
           </div>
         </div>
+      
+      <hr>
+      <h3><span class="numbers">6.</span> Consolidate your super*</h3>
+      <p>Send us on a search to find your other super and consolidate it all into your iQ Super – Saver account. Do make sure you read 	<span class="item">
+         <span class="subitem-3"><a href="javascript:void(0)">this important information</a>.</span>
+    </span></p>
+	
+     <div class="statusRollup-3" >
+			<p style="font-size: 12px;"> Before you consolidate, it’s important to find out if you’ll have to pay any exit fees or charges, if your tax and preservation component will be impacted or if you’ll lose any features and benefits that are important to you, on leaving your other super fund(s). 
+			<br><br>
+			Also, any insurance cover you have with your other super fund(s) will be cancelled, if you roll your money out and close your account(s) with your other super fund(s). It’s important to think about how this will impact your insurance needs before consolidating your super.
+			</p>
       </div>
-      <h3>Search and consolidate consent</h3>
+
+	  <div class="row">
+        <div class="col-md-12 ">
+      		<div class="form-group" style="margin-bottom: 0;">
+				<div class="col-md-12 radio" style="padding-left: 0px;">
+				    <div class="btn-group" data-toggle="buttons">
+				        <label>
+				                  <input type="checkbox" id="searchConsent" name="quality[25]" value="searchConsent_checkbox" required/>
+				                  <span>&nbsp;I consent to the Trustee of iQ Super using my Tax File Number to search for other super accounts I may have, now and in the future, using a facility provided by the Australian Taxation Office (ATO). </span>
+				        </label>
+				        <label>
+								   <input type="checkbox" id="consolidateConsent" name="quality[25]" value="consolidateConsent_checkbox" required/>
+								   &nbsp;I consent to the Trustee of iQ Super consolidating any super found through the above search into my iQ Super – Saver account.
+
+				        </label>
+				        <label>
+								   <input type="checkbox" id="consolidateConsent" name="quality[25]" value="consolidateConsent_checkbox" required/>
+								   &nbsp;I have read and understand <span class="item"><span class="subitem-3"><a href="javascript:void(0)">this important information</a>.</span></span>
+				        </label>
+				     </div>
+				              <!--btn group--> 
+				</div>
+			</div>
+        </div>
+
+
+<!--
       <div class="row">
         <div class="col-md-12 ">
           <div class="form-group">
@@ -367,6 +440,7 @@ p { color: #5c5c5c; }
             </div>
           </div> 
         </div>
+-->
         
       </div>
       <hr>
@@ -374,21 +448,21 @@ p { color: #5c5c5c; }
       <div class="row">
         <div class="col-md-12">
           <ul>
-            <li>I have read and understood the <a href="https://russellinvestments.com/-/media/files/au/resources/pds/SS PDS SF RiQS.pdf" target="_blank">Russell iQ Super Product Disclosure Statement</a> (PDS).</li>
-            <li>I understand that Russell iQ Super is an online only product and that communication will be sent electronically.</li>
+            <li>I have read and understood the <a href="https://russellinvestments.com/-/media/files/au/resources/pds/ss-pds-sf-riqs-v1ff-web-1612.pdf" target="_blank">iQ Super &ndash; Saver Product Disclosure Statement</a> (PDS).</li>
+            <li>I understand that iQ Super &ndash; Saver is an online only product and that communications will be sent electronically.</li>
             <li>All information provided in this online form is true and correct.</li>
-            <li>I agree to be bound by the terms and conditions of Russell iQ Super, including those in the PDS (or any subsequent replacement PDS), the Trust Deed (as amended from time to time) and the terms and conditions of any insurance policy in relation to Russell iQ Super.</li>
+            <li>I agree to be bound by the terms and conditions of iQ Super &ndash; Saver, including those in the PDS (or any subsequent replacement PDS), the Trust Deed (as amended from time to time) and the terms and conditions of any insurance policy in relation to iQ Super &ndash; Saver.</li>
           </ul>
-          <b>Note:</b> You will be able to update your insurance preferences when you first log in to your online account. <br>
+          
           <br>
           <button type="submit" class="btn btn-standard" id="submit">Submit</button>
           <br>
           <br>
           <br>
-          For more information or for any questions about Russell iQ Super, please call us on 1800 225 599 (+61 2 9374 3911 for overseas members) or email us at <a href="mailto:russelliq@russell.com">russelliq@russellinvestments.com</a><br>
+          For more information or for any questions about iQ Super &ndash; Saver, please call us on 1800 555 667 (+61 2 9374 3916 for overseas) or email us at <a href="mailto:iq@russellinvestments.com.au">iq@russellinvestments.com.au</a><br>
           <br>
           <span class="disclaimer">
-          <p> IN PREPARING THIS FORM THE TRUSTEE HAS NOT TAKEN INTO ACCOUNT THE INVESTMENT OBJECTIVES, FINANCIAL SITUATION AND PARTICULAR NEEDS (FINANCIAL CIRCUMSTANCES) OF ANY PERSON. ACCORDINGLY, BEFORE MAKING A DECISION ABOUT THIS PRODUCT YOU SHOULD READ THE CURRENT PRODUCT DISCLOSURE STATEMENT AND SEEK ADVICE TAILORED TO YOUR OWN FINANCIAL CIRCUMSTANCES.TOTAL RISK MANAGEMENT PTY LIMITED ABN 62 008 644 353, AFSL NO. 238790, TRUSTEE OF THE RUSSELL SUPERSOLUTION MASTER TRUST ABN 89 384 753 567.<br>
+          <p> IN PREPARING THIS FORM THE TRUSTEE HAS NOT TAKEN INTO ACCOUNT THE INVESTMENT OBJECTIVES, FINANCIAL SITUATION AND PARTICULAR NEEDS (FINANCIAL CIRCUMSTANCES) OF ANY PERSON. ACCORDINGLY, BEFORE MAKING A DECISION ABOUT THIS PRODUCT YOU SHOULD READ THE CURRENT PRODUCT DISCLOSURE STATEMENT AND SEEK ADVICE TAILORED TO YOUR OWN FINANCIAL CIRCUMSTANCES.TOTAL RISK MANAGEMENT PTY LIMITED ABN 62 008 644 353, AFSL NO. 238790, TRUSTEE OF THE RUSSELL INVESTMENTS MASTER TRUST ABN 89 384 753 567.<br>
             <br>
           </p>
           </span> <br>
@@ -421,6 +495,11 @@ p { color: #5c5c5c; }
 		$('.subitem-2').attr('title', $('.statusRollup-2').remove().html())
 		$(document).tooltip();
 	});
+	$(function () {
+		$('.subitem-3').attr('title', $('.statusRollup-3').remove().html())
+		$(document).tooltip();
+	});
+
 	$("input.numeric").numeric()
 
 $(document).ready(function(e) {
@@ -444,9 +523,27 @@ $(document).ready(function(e) {
 			.end()
 			.children( '.dropdown-toggle' ).dropdown( 'toggle' );
 			return false;
-  		});
+			})
+  		
 		$(".dropdown-toggle").click(function(){
 			$(this).parent().parent().removeClass("has-error")
+		})
+		
+		$("#noInsurance").click(function(){
+			
+			$("#noInsuranceDetail").show();
+			$("#groupLifeInsuranceDetail").hide();
+			$("#transferInsuranceDetail").hide();
+		})
+		$("#groupLifeInsurance").click(function(){
+			$("#groupLifeInsuranceDetail").show();
+			$("#noInsuranceDetail").hide();
+			$("#transferInsuranceDetail").hide();
+		})
+		$("#transferInsurance").click(function(){
+			$("#transferInsuranceDetail").show();
+			$("#noInsuranceDetail").hide();
+			$("#groupLifeInsuranceDetail").hide();
 		})
 		
 		$("#registration-form").validator().on("submit",function(e){
