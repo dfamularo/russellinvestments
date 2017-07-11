@@ -14,11 +14,21 @@
 <script src="js/validator.js"></script>
 <script src="https://code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
 <script src="js/numeric.js"></script>
+<script src="js/iframeResizer.contentWindow.min.js"></script>
+
  
 <!--[if lt IE 9]>
 	  <script src="js/html5shiv.js"></script>
 	  <script src="js/respond.min.js"></script>
 	<![endif]-->
+<script>
+			var iFrameResizer = {
+					messageCallback: function(message){
+						alert(message,parentIFrame.getId());
+					}
+				}
+</script>
+
 <style>
 body { font-family: "CompatilFactLTW01-Regul 721693", Arial, sans-serif; }
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 { font-family: "CompatilFactLTW01-Regul 721693", Arial, sans-serif; font-weight: 100 !important; color: #333333; }
@@ -68,13 +78,13 @@ p { color: #5c5c5c; }
   <div class="container-fluid"> <br>
     <br>
     <br>
-    <h1 style="text-align: center;">JOIN IQ SUPER<sup>TM</sup> &ndash; SAVER<br>
-	   
-    </h1>
+<!--     <h1 style="text-align: center;">JOIN IQ SUPER<sup>TM</sup> &ndash; SAVER<br> </h1>-->
+	   <img src="img/BanneriQSuper_03_a.jpg" alt="BanneriQSuper_03_a" width="100%">
+    <br><br>
     
     <h3 style="text-align:center">Exclusively for One Big Switch customers</h3>
     <h3 style="text-align: center; font-size: 1.2em;">Please complete this form to open your iQ Super &ndash; Saver account in six simple steps.</h3>
-    <p style="text-align: center;">(Please complete all fields marked with *)</p>
+    <p style="text-align: center;">(Please complete all fields mared with *.)</p>
     <hr>
     <h3><span class="numbers">1.</span> Tell us about yourself</h3>
     <br>
@@ -150,7 +160,7 @@ p { color: #5c5c5c; }
           </div>
         </div>
         <div class="col-md-6 ">
-          <p>&nbsp;</p>
+          <p>ADDRESS LINE 2</p>
           <div class="form-group"> 
             <!--           <label for="inputPassword" class="col-md-4 control-label">OTHER</label> -->
             <div class="col-md-12">
@@ -271,7 +281,7 @@ p { color: #5c5c5c; }
               <br>
               By providing my Tax File Number (TFN), I agree for it to be used as outlined in the TFN Collection Statement. 
               <span class="item">
-                <span class="subitem"><a href="javascript:void(0)">Why is it important to give us your Tax File Number?</a></span>
+                <span class="subitem"><a href="javascript:void(0)">Why is it important to give us your TFN?</a></span>
               </span>
               <div class="statusRollup" >
                 <p style="font-size: 12px;">Under superannuation law, we can collect your Tax File Number (TFN) for lawful purposes. While you don’t have to give us your TFN, doing so means: </p>
@@ -291,7 +301,7 @@ p { color: #5c5c5c; }
                 </ul>
                 <p style="font-size: 12px;">The Trustee of your super fund may share your TFN with another super provider when your benefits are being transferred, unless you ask the Trustee in writing that your TFN not be shared with any other super provider. Your TFN will otherwise remain confidential. </p>
               </div>
-              Can't find your TFN? Call the Australian Taxation Office on 132 861. </div>
+              Can't find your TFN? Call the Australian Taxation Office (ATO) on 132 861. </div>
           </div>
         </div>
       </div>
@@ -325,7 +335,7 @@ p { color: #5c5c5c; }
               <!--menu1--> 
               
               <!--tab content-->
-              <div class="row">
+              <!--<div class="row">
                 <div class="col-md-12 "> <br>
                   <b>Note:</b> You will be able to update your insurance preferences and change your investment strategy up to five times a year at no cost via your online account.
 <br>
@@ -341,7 +351,7 @@ p { color: #5c5c5c; }
                       Automatic re-balancing will happen on the 15th day of each month, so you won’t be able to switch your investments for the three working days before this date.</p>
                   </div>
                 </div>
-              </div>
+              </div>-->
               <div class="modal fade" id="myModal3" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                   <div class="modal-content">
@@ -380,7 +390,7 @@ p { color: #5c5c5c; }
                    <div id="groupLifeInsuranceDetail" style="display: none; padding-left: 20px;"><p><br><br><br>You will need to go through our underwriting process with our insurer and we’ll be in touch with more information on this.</p></div>
 
                   </div>
-				   <div id="transferInsuranceDetail" style="display: none; padding-left: 20px;"><p>We’ll contact you to find out more about your existing insurance cover.</p></div>
+				   <div id="transferInsuranceDetail" style="display: none; padding-left: 10px;"><p>We’ll contact you to find out more about your existing insurance cover.</p></div>
 				    
                   </div>
 
@@ -411,7 +421,7 @@ p { color: #5c5c5c; }
 				    <div class="btn-group" data-toggle="buttons">
 				        <label>
 				                  <input type="checkbox" id="searchConsent" name="quality[25]" value="searchConsent_checkbox" required/>
-				                  <span>&nbsp;I consent to the Trustee of iQ Super using my Tax File Number to search for other super accounts I may have, now and in the future, using a facility provided by the Australian Taxation Office (ATO). </span>
+				                  <span>&nbsp;I consent to the Trustee of iQ Super using my TFN to search for other super accounts I may have, now and in the future, using a facility provided by the ATO. </span>
 				        </label>
 				        <label>
 								   <input type="checkbox" id="consolidateConsent" name="quality[25]" value="consolidateConsent_checkbox" required/>
@@ -420,7 +430,7 @@ p { color: #5c5c5c; }
 				        </label>
 				        <label>
 								   <input type="checkbox" id="consolidateConsent" name="quality[25]" value="consolidateConsent_checkbox" required/>
-								   &nbsp;I have read and understand <span class="item"><span class="subitem-3"><a href="javascript:void(0)">this important information</a>.</span></span>
+								   &nbsp;I have read and understood <span class="item"><span class="subitem-3"><a href="javascript:void(0)">this important information</a>.</span></span>
 				        </label>
 				     </div>
 				              <!--btn group--> 
