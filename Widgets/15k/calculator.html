@@ -21,7 +21,7 @@ h2 {text-align:center; color:#5C5C5C;}
 <body >
 <div style="text-align:center">
 <h2 style="font-weight:bold; margin-bottom:30px; font-size:30px">See what a $15,000 super boost could mean for you*</h2>
-<h2>I am <input value="25" id="age"/> years old</h2>
+<h2>I am <input value="25" id="age" data-validation="digit"/> years old</h2>
 <h2>By the time I retire, $15,000 could be worth <input type="text" disabled value="$173,355" id="valueOf15K"/> </h2>
 <a class=" btn btn-standard" href="https://russellinvestments.com/au/pages/15k-campaign/15k-super-boost/overview#showmehow" >Combine now</a>
 </div>
@@ -47,7 +47,16 @@ $(document).ready(function(e) {
 	function numberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 	}
-	
+	$('*[data-validation="digit"]').keydown(function (e) {
+                if ($.inArray(e.keyCode, [46, 8, 9, 27, 13, 110, 190]) !== -1 ||
+                        (e.keyCode == 65 && e.ctrlKey === true) ||
+                        (e.keyCode >= 35 && e.keyCode <= 40)) {
+                    return;
+                }
+                if ((e.shiftKey || (e.keyCode < 48 || e.keyCode > 57)) && (e.keyCode < 96 || e.keyCode > 105)) {
+                    e.preventDefault();
+                }
+            });
 });
 </script>
 </body>
