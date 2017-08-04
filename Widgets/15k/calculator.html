@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Untitled Document</title>
+<script src="http://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<link rel="stylesheet" type="text/css" href="//fast.fonts.com/cssapi/b0549848-32a3-4c8e-a13e-810394960364.css" />
+<link rel="stylesheet" type="text/css" href="https://russellinvestments.com/CSS/russell-investments.min.css" />
+<style>
+html, body {background:#f2f2f2}
+h2 {text-align:center; color:#5C5C5C;}
+#age, #valueOf15K {border:none; background:none; font-size:25px; width:50px; text-align:center; color:#C4C4C4; } 
+#age {border-bottom:2px solid #C4C4C4}
+#age.active, #valueOf15K.active{color:#66aadd;}
+#age.active {border-bottom:2px solid #66aadd}
+#valueOf15K {width:120px; text-align:left; border-bottom:none;}
+.btn.btn-standard{background:#DD6600!important; border-color:#DD6600!important}
+</style>
+</head>
+
+<body >
+<div style="text-align:center">
+<h2 style="font-weight:bold; margin-bottom:30px; font-size:30px">See what a $15,000 super boost could mean for you*</h2>
+<h2>I am <input value="25" id="age"/> years old</h2>
+<h2>By the time I retire, $15,000 could be worth <input type="text" disabled value="$173,355" id="valueOf15K"/> </h2>
+<a class=" btn btn-standard" href="https://russellinvestments.com/au/pages/15k-campaign/15k-super-boost/overview#showmehow" >Combine now</a>
+</div>
+<script>
+$(document).ready(function(e) {
+	$("#age").focus(function(){
+		$(this).val("");
+		$("#valueOf15K").val("$");
+		$(this).addClass("active")
+		$("#valueOf15K").addClass("active")
+	})
+	$("#age").keyup(function(){
+		$("#valueOf15K").val(calculate($(this).val()))
+	})
+	
+	function calculate(age){
+		yearsToRetirement = 67 - age
+		x = Math.round(15000*Math.pow(1+0.06,yearsToRetirement))
+		x = numberWithCommas(x)
+		yearsToRetirementValue = "$".concat(x)
+		return yearsToRetirementValue
+	}
+	function numberWithCommas(x) {
+    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+	}
+	
+});
+</script>
+</body>
+</html>
